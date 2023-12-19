@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Schedule Case</title>
+</head>
+<script src="caseinfo.js"></script>
+<body>
+    
+<main>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Schedule cases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usersetting.html">User setting</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+    
+    <div class="card">
+        
+        <div class="card-header">
+            <h1 class="text-center">Case Information Form</h1>
+        </div>
+        <div class="card-body">
+            <form action="process_form.php" method="POST">
+                <div class="form-group">
+                    <label for="case_number">Case Number:</label>
+                    <input type="text" class="form-control" id="case_number" name="case_number" required>
+                  
+                </div>
+               <button type="button" class="btn btn-primary" id="fetchButton">Fetch</button>
+          
+
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select class="form-control" id="category" name="category" required>
+                        <option value="civil">Civil</option>
+                        <option value="criminal">Criminal</option>
+                        <option value="family">Family</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="qualitative_factors">Qualitative Factors:</label>
+                   <div class="form-group">
+    <label for="complexity_legal_issues">Complexity of Legal Issues Involved:</label>
+    <input type="number" class="form-control" id="complexity_legal_issues" name="complexity_legal_issues" step="1" min="0">
+</div>
+
+<div class="form-group">
+    <label for="novelty_legal_issues">Novelty of Legal Issues Involved:</label>
+    <input type="number" class="form-control" id="novelty_legal_issues" name="novelty_legal_issues" step="1" min="0">
+</div>
+
+<div class="form-group">
+    <label for="public_interest">Degree of Public Interest in the Case:</label>
+    <select class="form-control" id="public_interest" name="public_interest">
+        <option value="low">Low</option>
+        <option value="moderate">Moderate</option>
+        <option value="high">High</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="urgency">Degree of Urgency in Resolving the Case:</label>
+    <select class="form-control" id="urgency" name="urgency">
+        <option value="low">Low</option>
+        <option value="moderate">Moderate</option>
+        <option value="high">High</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="cooperation">Degree of Cooperation Among Parties:</label>
+    <select class="form-control" id="cooperation" name="cooperation">
+        <option value="low">Low</option>
+        <option value="moderate">Moderate</option>
+        <option value="high">High</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="legal_representation">Degree of Legal Representation for Parties:</label>
+    <select class="form-control" id="legal_representation" name="legal_representation">
+        <option value="low">Low</option>
+        <option value="moderate">Moderate</option>
+        <option value="high">High</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="experience_judges_lawyers">Degree of Experience of Judges and Lawyers Involved:</label>
+    <select class="form-control" id="experience_judges_lawyers" name="experience_judges_lawyers">
+        <option value="low">Low</option>
+        <option value="moderate">Moderate</option>
+        <option value="high">High</option>
+    </select>
+</div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="quantitative_factors">Quantitative Factors:</label>
+                   <div class="form-group">
+    <label for="num_parties">Number of Parties Involved:</label>
+    <input type="number" class="form-control" id="num_parties" name="num_parties" step="1" min="0">
+</div>
+
+<div class="form-group">
+    <label for="amount_evidence">Amount of Evidence to be Presented:</label>
+    <input type="number" class="form-control" id="amount_evidence" name="amount_evidence" step="1" min="0">
+</div>
+
+<div class="form-group">
+    <label for="num_witnesses">Number of Witnesses to be Examined:</label>
+    <input type="number" class="form-control" id="num_witnesses" name="num_witnesses" step="1" min="0">
+</div>
+
+<div class="form-group">
+    <label for="num_documents">Number of Documents to be Reviewed:</label>
+    <input type="number" class="form-control" id="num_documents" name="num_documents" step="1" min="0">
+</div>
+
+<div class="form-group">
+    <label for="length_pleadings">Length of Pleadings and Submissions:</label>
+    <input type="text" class="form-control" id="length_pleadings" name="length_pleadings">
+</div>
+
+<div class="form-group">
+    <label for="num_legal_issues">Number of Legal Issues to be Addressed:</label>
+    <input type="number" class="form-control" id="num_legal_issues" name="num_legal_issues" step="1" min="0">
+</div>
+
+<div class="form-group">
+    <label for="time_required_hearing">Amount of Time Required for Each Hearing:</label>
+    <input type="text" class="form-control" id="time_required_hearing" name="time_required_hearing">
+</div>
+
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</main>
+
+</body>
+
+
+

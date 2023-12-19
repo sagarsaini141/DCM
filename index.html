@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DCM system</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+<body>
+    <div id="main">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="case_info_form.html">Schedule cases</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="usersetting.html">User setting</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="center-div d-flex justify-content-center wrap" style="margin:1%">
+
+            <div class="left-div" style="min-width:75vw; display: block;">
+
+                <div id="toggle" >
+                    <p class="d-inline-flex gap-3">
+                      <a
+                        class="btn btn-primary"
+                        data-bs-toggle="collapse"
+                        href="#collapseExample1"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseExample"
+                      >
+                        Drill Down
+                      </a>
+                      <a
+                        class="btn btn-primary"
+                        data-bs-toggle="collapse"
+                        href="#collapseExample2"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseExample"
+                      >
+                        pending Dashboard
+                      </a>
+                      <a
+                        class="btn btn-primary"
+                        data-bs-toggle="collapse"
+                        href="#collapseExample3"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseExample"
+                      >
+                        Disposed Dashboard
+                      </a>
+                    </p>
+                    <div class="collapse" id="collapseExample1" style="border:none;">
+                      <div class="card card-body"style="border:none">
+                        <div class="container">
+                          <div class="row d-flex gap-4">
+                            <div class="col w-50">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>6139843</h2>
+                                  <h5>Normal Cases</h5>
+                                </div>
+                                <div class="case-loader">
+                                  <!-- <i class="ri-hourglass-fill"></i> -->
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>33304768</h2>
+                                  <h5>Priority Cases</h5>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>9949483</h2>
+                                  <h5>High Priority Cases</h5>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>44249654</h2>
+                                  <h5>Total Cases</h5>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="collapse" id="collapseExample2">
+                      <div class="card card-body">
+                        <div class="container">
+                          <div class="row d-flex gap-4 wrap">
+                            <div class="col w-50">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>33304768</h2>
+                                  <h5>Civil Cases</h5>
+                                </div>
+                                <div class="case-loader"></div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>10944886</h2>
+                                  <h5>Criminal Cases</h5>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>44249654</h2>
+                                  <h5>Total Cases</h5>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="collapse" id="collapseExample3">
+                      <div class="card card-body">
+                        <div class="container">
+                          <div class="row d-flex gap-4">
+                            <div class="col w-50">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>119949483</h2>
+                                  <h5>Civil Cases</h5>
+                                </div>
+                                <div class="case-loader"></div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>39214927</h2>
+                                  <h5>Criminal Cases</h5>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="cases">
+                                <div class="cases-names">
+                                  <h2>159164410</h2>
+                                  <h5>Total Cases</h5   >
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+             
+            </div>
+            <div class=" right-div " style=" min-width: 20vw;">
+                <h5>Case Details</h2>
+
+                <div class="card-body">
+                    <div class="card" style=" max-width:18rem; margin: auto 0.3rem ">
+                        <div class="card-body">
+                            <h5 class="card-title" name="caseid">Case ID - 11447 </h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Parties Invoved : Rakesh Jain, Prateek
+                                roy
+                            </h6>
+                            <p class="card-text">Case Histroy: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Ut,
+                                magni. Explicabo accusantium quaerat illo?</p>
+                        </div>
+                    </div>
+                    <div class="card" style="max-width:18rem; margin: 0.3rem auto ">
+                        <div class="card-body">
+                            <h5 class="card-title" name="caseid">Case ID - 02133 </h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">Parties Invoved : Rakesh Jain, Prateek
+                                roy
+                            </h6>
+                            <p class="card-text">Case Histroy: Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Ut,
+                                magni. Explicabo accusantium quaerat illo?</p>
+
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        Search Case Details
+                    </button>
+
+
+                    <!-- Modal -->
+                    <div class="modal fade modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static"
+                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Case Details</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body ">
+
+                                    <!-- search case form -->
+                                    <form>
+                                        <div class="row mb-3">
+                                            <label for="inputEmail3" class="col-sm-2 col-form-label">Case ID</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="inputcaseID">
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="inputPassword3" class="col-sm-2 col-form-label">Priority</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Open this select menu</option>
+                                                    <option value="1">High Priority</option>
+                                                    <option value="2">Low Priority</option>
+                                                    <option value="3">Normal Priority</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="inputPassword3" class="col-sm-2 col-form-label">Category</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Open this select menu</option>
+                                                    <option value="1">Civil cases</option>
+                                                    <option value="2">civil suits</option>
+                                                    <option value="3">Criminal cases</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label for="inputEmail3" class="col-sm-2 col-form-label">Date</label>
+                                            <div class="col-sm-10">
+                                                <input type="date" class="form-control" id="inputcaseID">
+                                            </div>
+                                        </div>
+
+
+                                        <!-- <button type="submit" class="btn btn-primary">Sign in</button> -->
+                                    </form>
+
+                                    <!--  -->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
